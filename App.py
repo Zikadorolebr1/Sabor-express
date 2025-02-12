@@ -62,7 +62,7 @@ def escolher_opções():
         if opção_escolhida == 1:
             cadastrar_novo_restaurante()
         elif opção_escolhida == 2:
-            print("Listar restaurante:")
+            listar_restaurante()
         elif opção_escolhida == 3:
             print("Ativar restaurante:")
         elif opção_escolhida == 4:
