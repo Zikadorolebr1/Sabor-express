@@ -1,6 +1,7 @@
 import os
 
 restaurantes = []
+produtos = []
 
 
 def exibir_nome_do_programa():
@@ -51,7 +52,12 @@ def listar_novo_restaurante():
     restaurantes.append(listar_restaurante)
     print(f"O restaurante {listar_restaurante} foi listado com sucesso!")
     input("Digite uma tecla para voltar ao menu principal: ")
-    main()
+    produto_cadastrado = input("Cadastre o produto do restaurante listado: ")
+    if produto_cadastrado in produtos:
+        print("Este produto já está cadastrado.)
+    else:
+        produtos.append(produto_cadastrado)
+     print(f"O {produto_cadastrado} foi cadastrado com sucesso!\n")   
 
 
 def escolher_opções():
