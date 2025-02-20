@@ -64,7 +64,7 @@ def listar_restaurante():
         print("Este produto já está cadastrado.")
     else:
         produtos.append(produto_cadastrado)
-    print(f"O produto {produto_cadastrado} foi cadastrado com sucesso!\n")
+        print(f"O produto {produto_cadastrado} foi cadastrado com sucesso!\n")
     input("Digite uma tecla para voltar ao menu principal: ")
     main()
 
