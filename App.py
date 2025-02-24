@@ -57,7 +57,7 @@ def listar_restaurante():
         print("Este restaurante já está listado.")
     else:
         restaurantes.append(listar_restaurante)
-    print(f"O restaurante {listar_restaurante} foi listado com sucesso!\n")
+        print(f"O restaurante {listar_restaurante} foi listado com sucesso!\n")
 
     produto_cadastrado = input("Cadastre o produto do restaurante listado: ")
     if produto_cadastrado in produtos:
@@ -71,11 +71,20 @@ def listar_restaurante():
 
 def ativar_restaurante():
     os.system('cls')
+    print("Ativa Restaurante\n")
+    ativar_restaurante = input("Insira o nome do seguinte restaurante para ser ativado: ")
+    if ativar_restaurante in restaurantes:
+        print("Este restaurante já está em atividade.")
+    else:
+        restaurantes.append(ativar_restaurante)
+        print(f"Este {ativar_restaurante} foi ativado com sucesso! ")
+    input("Digite uma tecla para voltar ao menu principal: ")
+    main()
 
 
 def desativar_restaurante():
     os.system('cls')
-    print("Desativar restaurante")
+    print("Desativar restaurante\n")
 
     if not restaurantes:
         print("Nenhum restaurante para desativar\n")
@@ -83,10 +92,10 @@ def desativar_restaurante():
     else:
         print("Restaurantes cadastrados:")
     for i, restaurante in enumerate(restaurantes, 1):
-        print(f"{i}, {restaurante}")    
+        print(f"{i}, {restaurante}")
     try:
         restaurantes_ativo = int(input("\nEscolha um restaurante para desativar: "))
-        if 1<= restaurantes_ativo <= len(restaurantes):
+        if 1 <= restaurantes_ativo <= len(restaurantes):
             restaurante_nome = restaurantes.pop(restaurantes_ativo - 1)
             print(f"O restaurante {restaurante_nome} foi desativado no sistema.")
         else:
