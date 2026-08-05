@@ -121,11 +121,37 @@ def cadastrar_categoria_produto():
 
     window.close()
 
+def desativar_restaurante():
+    layout = [
+        [sg.Text("Restaurantes ativos: ")]
+        [sg.Button("Confirmar"), sg.Button("Cancelar")]
+    ]
+
+    window = sg.Window("Restaurantes Ativos", layout)
+
+    while True:
+        event, values = window.read()
+
+        if event == sg.WINDOW_CLOSED or event == "Cancelar":
+            break
+        elif event == "Confirmar":
+            ativos = values["Ativos"]
+            if ativos in restaurantes:
+                sg.popup[f"Restaurante desativado {restaurantes} com sucesso!"]
+            else:
+                sg.popup["Opção inválida!"]
+
+            desativar_restaurante()
+
+    window.close()
+
 # Função principal que inicializa o programa
 def main():
     exibir_nome_do_programa()  # Exibe a popup com o nome do sistema
     cadastrar_novo_restaurante()  # Chama a função para cadastrar um novo restaurante
-    ativar_novo_restaurante()
+    desativar_restaurante()
+
+
 
 if __name__ == "__main__":
     main()  # Chama a função principal quando o programa inicia
