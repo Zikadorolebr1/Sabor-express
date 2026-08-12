@@ -43,11 +43,12 @@ def exibir_subtitulo(texto):
     print(texto)
     print()
 
-    for restaurante in restaurantes:
-        restaurante = restaurante['nome']
-        categoria = restaurante['categoria']
-        ativo = restaurante['ativo']
-        print(f'-{restaurante}' | '{categoria}' | '{ativo}')  # Dicionario usado para classificar nome, categoria e ativos
+
+for restaurante in restaurantes:
+    nome_restaurante = restaurante['nome']
+    categoria = restaurante['categoria']
+    ativo = restaurante['ativo']
+    print(f'-{nome_restaurante} | {categoria} | {ativo}')  # Dicionario usado para classificar nome, categoria e ativos
 
 
 def cadastrar_novo_restaurante():
@@ -55,10 +56,10 @@ def cadastrar_novo_restaurante():
     os.system('cls')
     exibir_subtitulo("Cadastre novos restaurantes\n")
     nome_do_restaurante = input("Nome do restaurante que deseja cadastrar-lo: ")
-    categoria = input(f"Cateogira do restaurante que deseja cadastral-lo: {nome_do_restaurante}")
-    dados_do_restaurante = {'nome':nome_do_restaurante, 'categoria':categoria, 'ativo':False}
+    categoria = input(f"Cateogira do restaurante que deseja cadastral-lo {nome_do_restaurante}: ")
+    dados_do_restaurante = {'nome': nome_do_restaurante, 'categoria': categoria, 'ativo': False}
     restaurantes.append = [dados_do_restaurante]
-    '''Sempre vai ser falso porque quando o restaurante será criado 
+    '''Sempre vai ser falso porque quando o restaurante será criado
     ele ainda deve ser ativado'''
 
     if nome_do_restaurante in restaurantes:
@@ -102,19 +103,13 @@ def cadastrar_novo_produto():
     else:
         print("Opção inválida!\n")
 
-    voltar_menu_principal()
+    voltar_menu_principal() 
 
 
-def ativar_restaurante():
-    os.system('cls')
-    print("Ativa Restaurante\n")
-    ativar_restaurante = input("Insira o nome do seguinte restaurante para ser ativado: ")
-    if ativar_restaurante in restaurantes:
-        print("Este restaurante já está em atividade.")
-    else:
-        restaurantes.append(ativar_restaurante)
-        print(f"Este {ativar_restaurante} foi ativado com sucesso! ")
-
+def alterar_estado_restaurante():
+    exibir_subtitulo("Alterar estado atual do restaurante")
+    nome_restaurante = input("Digite o nome do restaurante: ")      
+### A onde eu parei foi aqui 
     voltar_menu_principal()
 
 
@@ -151,9 +146,7 @@ def escolher_opções():
         elif opção_escolhida == 2:
             cadastrar_novo_produto()
         elif opção_escolhida == 3:
-            ativar_restaurante()
-        elif opção_escolhida == 4:
-            desativar_restaurante()
+            alterar_estado_restaurante()
         elif opção_escolhida == 5:
             Encerrando_programa()
         else:
