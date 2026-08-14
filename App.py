@@ -63,6 +63,9 @@ for restaurante in restaurantes:
     ativo = restaurante['ativo']
     print(f'-{nome_restaurante.ljust(20)} | {categoria.ljust(20)} | {ativo}')  # Dicionario usado para classificar nome, categoria e ativos
 
+def exibir_restaurantes(): # Criar menu para exibir os restaurantes ativos na def alterar_estado e depois criar uma opção para caso o usuário queira criar mais um restaurante
+    exibir_subtitulo("--------------- Restaurantes ativos ---------------")
+    exibir_restaurantes(nome_restaurante)
 
 def cadastrar_novo_restaurante():
     # função para cadastrar um restaurante
@@ -133,6 +136,8 @@ def alterar_estado_restaurante():
             print(mensagem)
     if not restaurante_encontrado:
         print(f"O restaurante {nome_restaurante} não foi encontrado.")
+
+    exibir_restaurantes(nome_restaurante)
 
     voltar_menu_principal()
 
