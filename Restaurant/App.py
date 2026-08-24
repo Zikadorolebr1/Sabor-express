@@ -1,9 +1,8 @@
-#### CURRENTLY IN DEV
-#### AINDA ESTÀ SENDO DESENVOLVIDO
+
 
 import os
-
-restaurantes = [{'nome': 'Praça', 'categoria': 'Japonesa', 'ativo': False},    ###  Dicionario {} e colocamos o valor
+#   Dicionario {} e colocamos o valor
+restaurantes = [{'nome': 'Praça', 'categoria': 'Japonesa', 'ativo': False},
                 {'nome': 'Praça', 'categoria': 'A la carte', 'ativo': True},
                 {'nome': 'Praça', 'categoria': 'Japonesa', 'ativo': False}]
 
@@ -42,7 +41,7 @@ def voltar_menu_principal():
     main()
 
 
-# opção inválida quando utiliza uma outra tecla tanto no menu quanto no cadastro
+# opção inválida quando utiliza uma outra tecla tanto no menu/cadastro
 def opção_invalida():
     print("Opção inválida! Tente novamente.\n")
     voltar_menu_principal()
@@ -74,8 +73,10 @@ def cadastrar_novo_restaurante():
     os.system('cls')
     exibir_subtitulo("Cadastre novos restaurantes\n")
     nome_do_restaurante = input("Nome do restaurante que deseja cadastrar-lo: ")
-    nome_categoria = input(f"Cateogira do restaurante que deseja cadastral-lo {nome_do_restaurante}: ")
-    dados_do_restaurante = {'nome': nome_do_restaurante, 'categoria': nome_categoria, 'ativo': False}
+    nome_categoria = input(f"Categoria do restaurante que deseja cadastral-lo {nome_do_restaurante}: ")
+    dados_do_restaurante = {'nome': nome_do_restaurante,
+                            'categoria': nome_categoria,
+                            'ativo': False}
     restaurantes.append(dados_do_restaurante)
     '''Sempre vai ser falso porque quando o restaurante será criado
     ele ainda deve ser ativado'''
@@ -160,7 +161,8 @@ def desativar_restaurante():
         restaurantes_ativo = int(input("\nEscolha um restaurante para desativar: "))
         if 1 <= restaurantes_ativo <= len(restaurantes):
             restaurante_nome = restaurantes(restaurantes_ativo - 1)
-            print(f"O restaurante {restaurante_nome} foi desativado no sistema.")
+            print(f"""O restaurante {restaurante_nome}
+                  foi desativado no sistema.""")
         else:
             print("Opção de restaurante inválida!\n")
     except ValueError:
