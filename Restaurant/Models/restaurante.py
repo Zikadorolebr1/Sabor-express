@@ -35,7 +35,7 @@ class Restaurante:
             print(f'{restaurante._nome.ljust(25)} |'
                   f'{restaurante._categoria.ljust(25)} |'
                   f'{restaurante._nota.ljust(25)} |'
-                  str{restaurante._media_avaliacao} |
+                  f'{str(restaurante._media_avaliacao).ljust(25)}' |
                   f'{restaurante.ativo.ljust(25)}')
 
     @property  # is a built-in decorator that allows you to define methods in
