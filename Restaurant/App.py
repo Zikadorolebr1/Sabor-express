@@ -1,5 +1,3 @@
-
-
 import os
 #   Dicionario {} e colocamos o valor
 restaurantes = [{'nome': 'Praça', 'categoria': 'Japonesa', 'ativo': False},
@@ -127,7 +125,7 @@ def alterar_estado_restaurante():
 
     for restaurante in restaurantes:
         print(
-            f"- {restaurante['nome'].ljust(20)} | "
+            f"{restaurante['nome'].ljust(20)} | "
             f"{restaurante['categoria'].ljust(20)} | "
             f"{'Ativo' if restaurante['ativo'] else 'Inativo'}"
         )
@@ -198,8 +196,8 @@ def Encerrando_programa():
 def main():
     while True:
         os.system('cls')
-        exibir_programa()
         exibir_nome_do_programa()
+        exibir_programa()
 
         continuar = escolher_opções()
 
